@@ -1,0 +1,44 @@
+<div
+  class="core-line-container field-full-width"
+  [ngClass]="options?.containerClasses || []"
+>
+  <div
+    role="group"
+    class="internal-autocomplete-input-container"
+    [formGroup]="formGroup"
+    [attr.aria-labelledby]="_formField?.getLabelId()"
+    (focusin)="onFocusIn($event)"
+    (focusout)="onFocusOut($event)"
+  >
+    <input
+      formControlName="autocompleteField"
+      [matAutocomplete]="auto"
+      #autocompleteField
+      type="text"
+      matInput
+      [placeholder]="getPlaceHolder"
+      class="internal-autocomplete-input-element"
+    />
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      [displayWith]="displayFn"
+      (optionSelected)="wasSelected($event.option.value)"
+    >
+      <mat-option
+        *ngFor="let item of filteredItems | async"
+        [value]="getValue(item)"
+      >
+        {{item.display}}
+      </mat-option>
+    </mat-autocomplete>
+  </div>
+</div>
+<!-- <div class="row">
+  <div class="">
+    <br /><strong>Dirty: </strong> {{ formGroup.dirty }} <br />
+    <strong>Touched: </strong> {{ formGroup.touched }} <br /><strong
+      >Valid: </strong
+    >{{ formGroup.valid }} <br /><strong>Value:</strong>
+    {{ formGroup.value | json }}
+  </div>
+</div> -->

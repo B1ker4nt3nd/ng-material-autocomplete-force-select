@@ -1,0 +1,52 @@
+.core-line-container {
+  display: flex;
+  align-items: center;
+  margin: 1em;
+}
+.core-line-label {
+  margin: 0 1em 0 0;
+}
+.animate-warning {
+  animation-name: shake, mywarningmove, mysecondwarningmove;
+  animation-duration: 0.3s, 0.1s, 1.2s;
+  animation-delay: 0, 0.4s, 0.5s;
+  animation-timing-function: ease-in-out, linear, ease-out;
+}
+@keyframes shake {
+  0% {
+    margin-left: 0rem;
+    margin-top: 0.25rem;
+  }
+  25% {
+    margin-left: 0.5rem;
+    margin-top: 0rem;
+  }
+  75% {
+    margin-left: -0.5rem;
+    margin-top: 0rem;
+  }
+  100% {
+    margin-left: 0rem;
+    margin-top: -0.25rem;
+  }
+}
+@keyframes mywarningmove {
+  from {
+    color: rgb(106, 108, 111);
+    opacity: 1;
+  }
+  to {
+    color: #e77810;
+    opacity: 0.5;
+  }
+}
+@keyframes mysecondwarningmove {
+  from {
+    color: #e77810;
+    opacity: 0.5;
+  }
+  to {
+    color: rgb(106, 108, 111);
+    opacity: 1;
+  }
+}

@@ -11,6 +11,12 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "ngx-material-autocomplete-force-select": [
+        "dist/ngx-material-autocomplete-force-select/ngx-material-autocomplete-force-select",
+        "dist/ngx-material-autocomplete-force-select"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,

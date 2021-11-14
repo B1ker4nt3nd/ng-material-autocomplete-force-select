@@ -1,0 +1,36 @@
+<div
+  class="core-line-container"
+  [ngClass]="options?.containerClasses || []"
+  [ngClass]="{ 'animate-warning': hasWarning === true }"
+>
+  <div class="core-line-label" [ngClass]="options?.labelClasses || []">
+    <span class="show-data"
+      >{{ options?.label ?? "" }}<span *ngIf="isRequiredField()">*</span></span
+    >
+  </div>
+  <div
+    [formGroup]="parentForm"
+    class="core-line-input"
+    [ngClass]="options?.inputClasses || []"
+  >
+    <mat-form-field
+      [appearance]="options?.appearance ?? 'standard'"
+      class="field-full-width"
+    >
+      <internal-autocomplete-force-select-input
+        [formControlName]="controlName"
+        [options]="options"
+        [parentForm]="parentForm"
+        [controlName]="controlName"
+        [autocompleteInputOptions]="autocompleteInputOptions"
+      ></internal-autocomplete-force-select-input>
+      <mat-error
+        *ngIf="
+          parentForm.get(controlName)?.dirty &&
+          parentForm.get(controlName)?.hasError('required')
+        "
+        >{{ getRequiredMessage }}</mat-error
+      >
+    </mat-form-field>
+  </div>
+</div>
