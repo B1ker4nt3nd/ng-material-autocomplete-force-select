@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { IInputOptions } from '../../interfaces/text-input-options';
+import { IInputOptions } from '../interfaces';
 
 @Component({
   template: '',
