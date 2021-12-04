@@ -289,6 +289,9 @@ export class InternalAutoCompleteForceSelectInput
       } - ${JSON.stringify(this.savedActualViewModel)} `
     );
     const theValueInField = this.formGroup.get('autocompleteField')!.value;
+    if (!theValueInField) {
+      return true;
+    }
     return (
       !!theValueInField &&
       typeof theValueInField === 'string' &&
