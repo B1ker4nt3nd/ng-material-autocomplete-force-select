@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Update package:
 
-cd .\projects\ngx-material-autocomplete-force-select
-ng build ngx-material-autocomplete-force-select --prod
-cd ../../dist/ngx-material-autocomplete-force-select
+cd .\projects\ngx-material-autocomplete-force-select <br />
+ng build ngx-material-autocomplete-force-select --prod <br />
+cd ../../dist/ngx-material-autocomplete-force-select <br />
 npm publish
